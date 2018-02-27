@@ -1,0 +1,91 @@
+﻿<div class="container-fluid">
+	<div class="row-fluid clearfix">
+        <div class="col-md-1 column"></div>
+		<div class="col-md-10 column">
+			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand">摩天阶</a>
+				</div>
+
+				<div class="navbar-collapse in" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							 <a>首页</a>
+						</li>
+						<li>
+							 <a>团队</a>
+						</li>
+						<li class="dropdown">
+							 <a class="dropdown-toggle" data-toggle="dropdown">Others<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a>1</a>
+								</li>
+								<li>
+									 <a>2</a>
+								</li>
+								<li>
+									 <a>3</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a>4</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a>5</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div> <button type="submit" class="btn btn-default">Submit</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+
+                        {% if request.user.is_authenticated %}
+                        <li>
+                            <a>{{ request.user }}</a>
+                        </li>
+                        <li>
+                            <a href={% url 'logreg:logout' %}>注销</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href={% url 'logreg:login' %}>登录</a>
+                        <li>
+                        <li>
+                            <a href={% url 'logreg:register' %}>注册</a>
+                        <li>
+                        {% endif %}
+
+						<li class="dropdown">
+							 <a class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a>Action 1</a>
+								</li>
+								<li>
+									 <a>Action 2</a>
+								</li>
+								<li>
+									 <a>Action 3</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a>Action 4</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+        <div class="col-md-1 column"></div>
+	</div>
+</div>

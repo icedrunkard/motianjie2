@@ -1,0 +1,12 @@
+{{ registAdd }}
+<br>
+==================
+<br>
+{% if  username %}
+注册失败{{username}}已存在
+    <a href={% url "logreg:login" %}>登录</a>
+    <a href={% url "logreg:register" %}>注册</a>
+{% else %}
+    注册成功！
+    <a href={% url "logreg:login" %}>登录</a>
+{% endif %}

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+</head>
+<body>
+{% if not login_info %}
+    <h3>用户名不存在，请重新输入/注册！</h3>
+    <a href={% url 'logreg:login' %}>登录</a>
+{% else %}
+    {% if not request.user.is_authenticated %}
+    <h1>登录页面</h1>
+    <form method="POST" action='' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{uf.as_p}}
+        <input type="submit" value=登录>
+    </form>
+    {% endif %}
+{% endif %}
+<a href={% url "logreg:register" %}>注册</a>
+</body>
+</html>

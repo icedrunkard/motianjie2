@@ -1,0 +1,105 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{# 轮播：愿景，实现方式，进展 #}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-1 column">
+        </div>
+        <div class="col-md-10 column">
+            <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src={% static 'index/images/mind_map.png' %} alt="vision">
+                    </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="carousel-control left" href="#myCarousel"
+                   data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel"
+                   data-slide="next">&rsaquo;</a>
+            </div>
+        </div>
+        <div class="col-md-1 column">
+        </div>
+    </div>
+</div>
+{#  中间带  #}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="projects-header page-header text-center">
+            <h2>项目构成</h2>
+        </div>
+    </div>
+</div>
+
+{# 模块 #}
+<div class="container projects">
+    <div class="row">
+        <div class="col-md-1 column">
+        </div>
+        <div class="col-md-10 column">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="thumbnail" style="height: 450px;">
+                  <a title="前辈学院" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">
+                    <img class="lazy" src={% static 'index/images/life.png' %} width="600" height="300" alt="万花筒">
+                  </a>
+                  <div class="caption">
+                    <h3>
+                        <a title="前辈学院" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">前辈学院<br></a>
+                    </h3>
+                    <p>前辈们的闪光时刻。</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="thumbnail" style="height: 450px;">
+                  <a title="前沿科技" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">
+                    <img class="lazy" src={% static 'index/images/tech.png' %} width="600" height="300" alt="前沿科技">
+                  </a>
+                  <div class="caption">
+                    <h3>
+                        <a title="前沿科技" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">前沿科技<br></a>
+                    </h3>
+                    <p>科技的前沿，人类的边界。</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="thumbnail" style="height: 450px;">
+                  <a title="求学导师" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">
+                    <img class="lazy" src={% static 'index/images/tutor.png' %} width="600" height="300" alt="求学导师">
+                  </a>
+                  <div class="caption">
+                    <h3>
+                        <a href={% url 'schools:schools' %} title="求学导师" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">求学导师<br></a>
+                    </h3>
+                    <p>正规军的养成。</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="thumbnail" style="height: 450px;">
+                  <a title="方法路线" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">
+                    <img class="lazy" src={% static 'index/images/way.png' %} width="600" height="300" alt="方法路线">
+                  </a>
+                  <div class="caption">
+                    <h3>
+                        <a title="方法路线" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])">方法路线<br></a>
+                    </h3>
+                    <p>通达的方法路线。</p>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-1 column">
+        </div>
+    </div>
+</div>
+{% endblock %}
